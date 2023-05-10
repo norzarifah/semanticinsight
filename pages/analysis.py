@@ -20,7 +20,7 @@ def semantic_analysis(df):
 
     vectorizer_model = CountVectorizer(stop_words=stopwords, ngram_range=(1,2))
     
-    model = "./model/all-MiniLM-L6-v2"
+    model = "all-MiniLM-L6-v2"
     sentence_model = SentenceTransformer(model)
 
     embeddings = sentence_model.encode(sentences, convert_to_tensor=True)
