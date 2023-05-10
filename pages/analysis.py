@@ -93,13 +93,13 @@ def app():
     st.divider()
 
     # retrieve the data from session state
-    df = st.session_state.df
+    # df = st.session_state.df
 
     if st.button('Run Semantic Clustering'):
-        if df is None:
+        if st.session_state.df is None:
             st.write("Plese define data in Home tab")
         else:
-            output_df, cluster_path = plot_topics(df, method="analysis")               
+            output_df, cluster_path = plot_topics(st.session_state.df, method="analysis")               
             st.dataframe(output_df, use_container_width=True)
             st.write("Topic -1 refers to all outlier documents and are typically ignored.")
             st.markdown("***")
