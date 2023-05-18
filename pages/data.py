@@ -55,7 +55,7 @@ def select_data():
                 st.write("Selected columns:")
                 
                 # extract Year, Month, Date
-                df['DateTime'] = pd.to_datetime(df[date_cols[0]], format="%Y-%m-%d")
+                df['DateTime'] = pd.to_datetime(df[date_cols[0]], format="%Y-%m-%d HH:MM:SS")
                 df['Date'] = [d.date() for d in df['DateTime']]
                 df['Year'] = [d.year for d in df['Date']]
                 df['Month'] = [d.month for d in df['Date']]
